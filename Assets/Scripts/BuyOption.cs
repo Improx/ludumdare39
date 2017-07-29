@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BuyOption : MonoBehaviour
@@ -19,6 +18,8 @@ public class BuyOption : MonoBehaviour
     private int _ownedAmount = 0;
     private long _currentCost = 0;
 
+    private float lastMoneyEarnedTime = 0;
+
     public void Initialize(BuyOptionData data)
     {
         _optionData = data;
@@ -29,6 +30,25 @@ public class BuyOption : MonoBehaviour
         _buyAmountModifier = BuyAmountModifier.Instance;
         _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmount);
         _buyAmountModifier.OnModifierChangedEvent.AddListener((amount) => SetCost(CalculateCostForAmount(amount)));
+    }
+
+    private void Update()
+    {
+        Update_HandleEarnings();
+    }
+
+    private void Update_HandleEarnings()
+    {
+        if (Time.timeSinceLevelLoad > lastMoneyEarnedTime + _optionData.TickTimeInSeconds)
+        {
+            long moneyToEarn = _optionData.GetEarningsAtLevel(_ownedAmount);
+            if (moneyToEarn > 0)
+            {
+                //print("earned money " + _optionData.Name + " " + lastMoneyEarnedTime);
+                MoneyCounter.Instance.AddMoney(moneyToEarn);
+            }
+            lastMoneyEarnedTime = Time.timeSinceLevelLoad;
+        }
     }
 
     private long CalculateCostForAmount(int amount)
@@ -43,6 +63,7 @@ public class BuyOption : MonoBehaviour
 
     private void SetCost(long newCost)
     {
+        Debug.Assert(newCost > 0);
         _currentCost = newCost;
         print(newCost);
         _costText.text = _currentCost.ToString();
@@ -75,8 +96,4 @@ public class BuyOption : MonoBehaviour
         // Set new cost
         SetCost(_optionData.GetCostOfLevel(_ownedAmount));
     }
-}
-
-public class BuyAmountModifierChangedEvent : UnityEvent<int>
-{
 }

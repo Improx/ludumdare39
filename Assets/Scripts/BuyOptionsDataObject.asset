@@ -37,6 +37,6 @@ MonoBehaviour:
     Identifier: audience
     Description: 
     Icon: {fileID: 21300006, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-    StartingCost: 0
-    AvailableAtMoney: 0
+    StartingCost: 23498350
+    AvailableAtMoney: 5000
     CostMultiplierPerLevel: 1.1

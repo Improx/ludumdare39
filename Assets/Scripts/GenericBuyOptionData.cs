@@ -10,6 +10,8 @@ public class GenericBuyOptionData
     public long StartingCost = 100;
     public long AvailableAtMoney = 0;
     public float CostMultiplierPerLevel = 1;
+    public float EarningPerLevel = 10;
+    public float TickTimeInSeconds = 1;
 
     public virtual long GetCostOfLevel(int level)
     {
@@ -19,5 +21,10 @@ public class GenericBuyOptionData
     public virtual long GetCumulativeCostToLevel(int currentLevel, int targetLevel)
     {
         throw new NotImplementedException();
+    }
+
+    public long GetEarningsAtLevel(int level)
+    {
+        return (long)(level * EarningPerLevel);
     }
 }

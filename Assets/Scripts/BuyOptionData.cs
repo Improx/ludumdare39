@@ -19,7 +19,7 @@ public class BuyOptionData : GenericBuyOptionData
             * (1 - Math.Pow(CostMultiplierPerLevel, targetLevel - currentLevel)) 
             / (1 - CostMultiplierPerLevel);
 
-        long longCost = Mathf.CeilToInt((float)cost);
+        long longCost = Mathf.FloorToInt((float)cost);
 
         return longCost;
     }

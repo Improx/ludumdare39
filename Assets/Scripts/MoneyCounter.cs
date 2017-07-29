@@ -18,7 +18,7 @@ public class MoneyCounter : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 	    Money = 0;
-        counter.text = "0 C";
+        //counter.text = "0 C";
     }
 	
 	// Update is called once per frame
@@ -34,7 +34,7 @@ public class MoneyCounter : MonoBehaviour
     }
 
     // Adder
-    void AddMoney(long amount) {
+    public void AddMoney(long amount) {
         Money += amount;
     }
 
@@ -42,7 +42,6 @@ public class MoneyCounter : MonoBehaviour
     public void reduceMoney(long amount)
     {
         Money -= amount;
-        print($"current money = {Money}");
     }
 
     // Format the money string and set it

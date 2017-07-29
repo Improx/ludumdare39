@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 2526763303
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Desk
+    uniqueID: 135503125
     locked: 0
