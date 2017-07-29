@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,6 +25,19 @@ public class MoneyManager : MonoBehaviour
             }
         }
     }
+
+    private readonly List<string> _suffixes = new List<string>
+    {
+        "C",
+        "KC",
+        "MC",
+        "GC",
+        "TC",
+        "PC",
+        "EC",
+        "YC",
+        "ZC"
+    };
 
     [SerializeField]
     private MoneyDisplay _moneyDisplay;
@@ -57,14 +71,14 @@ public class MoneyManager : MonoBehaviour
     // Format and return the money as a string
     public string MoneyString()
     {
-        return Money.ToString();
+        string MString = Money.ToString();
+        int Len = MString.Length;
+        int Factor = (int)Mathf.Floor((Len - 1) / 3);
+        float Cash = Money / Mathf.Pow(1000, Factor);
+        string Final = Cash.ToString(CultureInfo.InvariantCulture);
+        return Final + _suffixes[Factor];
     }
 
-    // Length for suffix calculus
-    public int MoneyLength()
-    {
-        return Money.ToString().Length;
-    }
 
 
 }
