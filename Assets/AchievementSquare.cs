@@ -16,4 +16,9 @@ public class AchievementSquare : MonoBehaviour
         _title = title;
         _description = description;
     }
+
+    public void Unlock()
+    {
+        _icon.color = Color.white;
+    }
 }
