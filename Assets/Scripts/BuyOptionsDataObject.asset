@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35cf42fe5a0a25c428b213fb273c48fa, type: 3}
+  m_Name: BuyOptionsDataObject
+  m_EditorClassIdentifier: 
+  Options:
+  - Name: Russian hackers
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 100
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: Twitter bots
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 1000
+    AvailableAtMoney: 200
+    CostMultiplierPerLevel: 1
+  - Name: Bricks for wall
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 10000
+    AvailableAtMoney: 300
+    CostMultiplierPerLevel: 1
+  - Name: Fake audience members
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
+  - Name: 
+    Description: 
+    Icon: {fileID: 0}
+    StartingCost: 0
+    AvailableAtMoney: 0
+    CostMultiplierPerLevel: 1
