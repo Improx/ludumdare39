@@ -17,6 +17,7 @@ public class BuyOption : MonoBehaviour
 
     private BuyAmountModifier _buyAmountModifier;
     private int _ownedAmount = 0;
+    private long _currentCost = 0;
 
     public void Initialize(BuyOptionData data)
     {
@@ -27,6 +28,12 @@ public class BuyOption : MonoBehaviour
 
         _buyAmountModifier = BuyAmountModifier.Instance;
         _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmount);
+        _buyAmountModifier.OnModifierChangedEvent.AddListener((amount) => SetCost(CalculateCostForAmount(amount)));
+    }
+
+    private long CalculateCostForAmount(int amount)
+    {
+        return _optionData.GetCumulativeCostToLevel(_ownedAmount, _ownedAmount + amount);
     }
 
     private void SetTitle(string newTitle)
@@ -36,7 +43,9 @@ public class BuyOption : MonoBehaviour
 
     private void SetCost(long newCost)
     {
-        _costText.text = newCost.ToString();
+        _currentCost = newCost;
+        print(newCost);
+        _costText.text = _currentCost.ToString();
     }
 
     private void SetOwnedAmount(int newAmount)
@@ -56,12 +65,15 @@ public class BuyOption : MonoBehaviour
 
     public void Buy()
     {
-        // Remove money
-        // Increase income
+        // Reduce money by current cost (takes into account modifier)
+        MoneyCounter.Instance.reduceMoney(_currentCost);
 
+        // Increase owned amount
         _ownedAmount = _ownedAmount + _buyAmountModifier.CurrentModifier;
         SetOwnedAmount(_ownedAmount);
-        SetCost(_optionData.GetCostOfLevel(_ownedAmount + 1));
+
+        // Set new cost
+        SetCost(_optionData.GetCostOfLevel(_ownedAmount));
     }
 }
 

@@ -1,51 +1,61 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoneyCounter : MonoBehaviour {
-
-    private long money;
+public class MoneyCounter : MonoBehaviour
+{
+    public long Money { get; private set; }
     public Text counter;
+
+    public static MoneyCounter Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 	// Use this for initialization
 	void Start () {
-        money = 0;
+	    Money = 0;
         counter.text = "0 C";
     }
 	
 	// Update is called once per frame
 	void Update () {
-        money += 1531;
-        SetMoney();    
+	    //ney += 1531;
+        //tMoney();    
 	}
 
     // Getter
     long GetMoney()
     {
-        return money;
+        return Money;
     }
 
     // Adder
     void AddMoney(long amount) {
-        money += amount;
+        Money += amount;
     }
 
     // And this is för oski
-    void reduceMoney(long amount)
+    public void reduceMoney(long amount)
     {
-        money -= amount;
+        Money -= amount;
+        print($"current money = {Money}");
     }
 
     // Format the money string and set it
     void  SetMoney()  {
-        int length = money.ToString().Length;
+        int length = Money.ToString().Length;
         string prefix = "";
 
         if (length > 6) prefix = "M";
         else if (length > 3) prefix = "K";
 
-        string final = money.ToString("N0");
+        string final = Money.ToString("N0");
         counter.text = final + prefix;
+
+        
     }
 }

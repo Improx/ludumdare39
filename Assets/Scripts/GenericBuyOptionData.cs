@@ -15,4 +15,9 @@ public class GenericBuyOptionData
     {
         throw new NotImplementedException();
     }
+
+    public virtual long GetCumulativeCostToLevel(int currentLevel, int targetLevel)
+    {
+        throw new NotImplementedException();
+    }
 }
