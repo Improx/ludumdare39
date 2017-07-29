@@ -5,47 +5,34 @@ using UnityEngine.UI;
 
 public class MoneyCounter : MonoBehaviour {
 
-    private long money;
     public Text counter;
+    private MoneyManager manager = new MoneyManager();
+    private List<string> suffixes = new List<string>()
+    { "C", "KC", "MC", "GC", "TC", "PC", "EC", "YC", "ZC"};
 
-	// Use this for initialization
-	void Start () {
-        money = 0;
-        counter.text = "0 C";
+
+
+    // Use this for initialization
+    void Start () {
+        counter.text = "0C";
     }
 	
 	// Update is called once per frame
 	void Update () {
-        money += 1531;
+        manager.AddMoney(2000);
         SetMoney();    
-	}
-
-    // Getter
-    long GetMoney()
-    {
-        return money;
-    }
-
-    // Adder
-    void AddMoney(long amount) {
-        money += amount;
-    }
-
-    // And this is för oski
-    void reduceMoney(long amount)
-    {
-        money -= amount;
-    }
+	}    
 
     // Format the money string and set it
     void  SetMoney()  {
-        int length = money.ToString().Length;
-        string prefix = "";
+        string ms = manager.MoneyString();
+        int len = manager.MoneyLength();
+        int factor = (int) Mathf.Floor(len / 3);
+        float cash = manager.get() / Mathf.Pow(1000, factor);
 
-        if (length > 6) prefix = "M";
-        else if (length > 3) prefix = "K";
 
-        string final = money.ToString("N0");
-        counter.text = final + prefix;
+        string final = cash.ToString();
+        //print(cash);
+        counter.text = final + suffixes[factor];
     }
 }
