@@ -13,7 +13,6 @@ public class BuyOptionsList : MonoBehaviour
     {
         foreach (BuyOptionData buyOption in _buyOptions.Options)
         {
-            print(buyOption.Name);
             GameObject obj = Instantiate(_buyOptionObject, _buyOptionParent.transform);
             obj.GetComponent<BuyOption>().Initialize(buyOption);
         }
