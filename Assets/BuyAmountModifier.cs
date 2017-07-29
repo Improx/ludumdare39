@@ -8,7 +8,7 @@ public class BuyAmountModifier : MonoBehaviour
 {
     public static BuyAmountModifier Instance;
 
-    private readonly Dictionary<KeyCode, int> _amountModifierDictionary = new Dictionary<KeyCode, int>()
+    private readonly Dictionary<KeyCode, int> _amountModifierDictionary = new Dictionary<KeyCode, int>
     {
         {KeyCode.LeftControl, 10},
         {KeyCode.RightControl, 10},
@@ -30,8 +30,13 @@ public class BuyAmountModifier : MonoBehaviour
 
         set
         {
+            // If new value is different, invoke "changed" event
+            if (value != _currentModifier)
+            {
+                OnModifierChangedEvent.Invoke(value);
+
+            }
             _currentModifier = value;
-            OnModifierChangedEvent.Invoke(_currentModifier);
         }
     }
 
@@ -41,6 +46,11 @@ public class BuyAmountModifier : MonoBehaviour
     }
 
     private void Update()
+    {
+        CheckModifierInput();
+    }
+
+    private void CheckModifierInput()
     {
         foreach (KeyCode key in _amountModifierDictionary.Keys)
         {
