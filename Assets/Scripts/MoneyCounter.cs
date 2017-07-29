@@ -1,60 +1,38 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoneyCounter : MonoBehaviour
-{
-    public long Money { get; private set; }
+public class MoneyCounter : MonoBehaviour {
+
     public Text counter;
+    private MoneyManager manager = new MoneyManager();
+    private List<string> suffixes = new List<string>()
+    { "C", "KC", "MC", "GC", "TC", "PC", "EC", "YC", "ZC"};
 
-    public static MoneyCounter Instance;
 
-    void Awake()
-    {
-        Instance = this;
-    }
 
-	// Use this for initialization
-	void Start () {
-	    Money = 0;
-        //counter.text = "0 C";
+    // Use this for initialization
+    void Start () {
+        counter.text = "0C";
     }
 	
 	// Update is called once per frame
 	void Update () {
-	    //ney += 1531;
-        //tMoney();    
-	}
-
-    // Getter
-    long GetMoney()
-    {
-        return Money;
-    }
-
-    // Adder
-    public void AddMoney(long amount) {
-        Money += amount;
-    }
-
-    // And this is för oski
-    public void reduceMoney(long amount)
-    {
-        Money -= amount;
-    }
+        manager.AddMoney(2000);
+        SetMoney();    
+	}    
 
     // Format the money string and set it
     void  SetMoney()  {
-        int length = Money.ToString().Length;
-        string prefix = "";
+        string ms = manager.MoneyString();
+        int len = manager.MoneyLength();
+        int factor = (int) Mathf.Floor(len / 3);
+        float cash = manager.get() / Mathf.Pow(1000, factor);
 
-        if (length > 6) prefix = "M";
-        else if (length > 3) prefix = "K";
 
-        string final = Money.ToString("N0");
-        counter.text = final + prefix;
-
-        
+        string final = cash.ToString();
+        //print(cash);
+        counter.text = final + suffixes[factor];
     }
 }
