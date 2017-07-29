@@ -1,44 +1,58 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoneyManager : MonoBehaviour {
+public class MoneyManager : MonoBehaviour
+{
 
-    long money;
+    public static MoneyManager Instance;
 
-    public long get() { return money; }
+    private long _money;
 
-    // Use this for initialization
-    void Start () {
-        money = 0;
+    public long Money
+    {
+        get { return _money; }
+        private set
+        {
+            _money = value;
+            _moneyDisplay.SetDisplayAmount(_money);
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	}
+
+    [SerializeField]
+    private MoneyDisplay _moneyDisplay;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start () {
+        Money = 0;
+    }
 
     // Adder
     public void AddMoney(long amount)
     {
-        money += amount;
+        Money += amount;
     }
 
     // For buying stuff
-    void reduceMoney(long amount)
+    public void ReduceMoney(long amount)
     {
-        money -= amount;
+        Money -= amount;
     }
     
     // Format and return the money as a string
     public string MoneyString()
     {
-        return money.ToString();
+        return Money.ToString();
     }
 
     // Length for suffix calculus
     public int MoneyLength()
     {
-        return money.ToString().Length;
+        return Money.ToString().Length;
     }
 
 }

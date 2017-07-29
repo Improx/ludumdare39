@@ -45,7 +45,7 @@ public class BuyOption : MonoBehaviour
             if (moneyToEarn > 0)
             {
                 //print("earned money " + _optionData.Name + " " + lastMoneyEarnedTime);
-                MoneyCounter.Instance.AddMoney(moneyToEarn);
+                MoneyManager.Instance.AddMoney(moneyToEarn);
             }
             lastMoneyEarnedTime = Time.timeSinceLevelLoad;
         }
@@ -87,7 +87,7 @@ public class BuyOption : MonoBehaviour
     public void Buy()
     {
         // Reduce money by current cost (takes into account modifier)
-        MoneyCounter.Instance.reduceMoney(_currentCost);
+        MoneyManager.Instance.ReduceMoney(_currentCost);
 
         // Increase owned amount
         _ownedAmount = _ownedAmount + _buyAmountModifier.CurrentModifier;
