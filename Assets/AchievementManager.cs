@@ -12,7 +12,7 @@ public partial class AchievementManager : MonoBehaviour
         new Dictionary<AchSpriteColor, Color>
         {
             {AchSpriteColor.Bronze, 0x4f351c.ToColor()},
-            {AchSpriteColor.Silver, 0x527B85.ToColor()},
+            {AchSpriteColor.Silver, 0xadaba9.ToColor()},
             {AchSpriteColor.Gold, 0xf4aa42.ToColor()},
             {AchSpriteColor.Blue, 0x0e2577.ToColor()},
             {AchSpriteColor.Red, 0xa51c15.ToColor()},
@@ -99,74 +99,74 @@ public partial class AchievementManager : MonoBehaviour
         new AchievementInfo(Achievement.CLICKS_10000, 10000, AchColors[AchSpriteColor.Red], "10000 clicks", "Clicked 10000 times", 5),
 
         // Russian hackers
-        new AchievementInfo(Achievement.BUY_HACKERS_1, 1, AchColors[AchSpriteColor.Bronze], "Privet", "Hired a Russian hacker", 1),
-        new AchievementInfo(Achievement.BUY_HACKERS_10, 10, AchColors[AchSpriteColor.Silver], "Nothing to see here", "Hired 10 Russian hackers", 1),
-        new AchievementInfo(Achievement.BUY_HACKERS_50, 50, AchColors[AchSpriteColor.Gold], "Ignore us", "Hired 50 Russian hackers", 2),
-        new AchievementInfo(Achievement.BUY_HACKERS_100, 100, AchColors[AchSpriteColor.Blue], "Just friends", "Hired 100 Russian hackers", 4),
+        new AchievementInfo(Achievement.BUY_HACKERS_1, 1, AchColors[AchSpriteColor.Bronze], "Friend of Putin", "Hired a Russian hacker", 1),
+        new AchievementInfo(Achievement.BUY_HACKERS_10, 10, AchColors[AchSpriteColor.Silver], "Red-faced", "Hired 10 Russian hackers", 1),
+        new AchievementInfo(Achievement.BUY_HACKERS_50, 50, AchColors[AchSpriteColor.Gold], "Red-faced", "Hired 50 Russian hackers", 2),
+        new AchievementInfo(Achievement.BUY_HACKERS_100, 100, AchColors[AchSpriteColor.Blue], "Red-faced", "Hired 100 Russian hackers", 4),
         new AchievementInfo(Achievement.BUY_HACKERS_200, 200, AchColors[AchSpriteColor.Red], "Red-faced", "Hired 200 Russian hackers", 6),
 
         // Twitter bots
-        new AchievementInfo(Achievement.TWITTER_BOTS_1, 1, AchColors[AchSpriteColor.Bronze], "A follower", "Bought one Twitter bot", 1),
-        new AchievementInfo(Achievement.TWITTER_BOTS_10, 10, AchColors[AchSpriteColor.Silver], "Lots of likes", "Bought 10 Twitter bots", 1),
-        new AchievementInfo(Achievement.TWITTER_BOTS_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Bought 50 Twitter bots", 2),
-        new AchievementInfo(Achievement.TWITTER_BOTS_100, 100, AchColors[AchSpriteColor.Blue], "Cleaning house", "Bought 100 Twitter bots", 4),
-        new AchievementInfo(Achievement.TWITTER_BOTS_200, 200, AchColors[AchSpriteColor.Red], "Everyone likes me", "Bought 200 Twitter bots", 6),
+        new AchievementInfo(Achievement.TWITTER_BOTS_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Buy one Twitter bot", 1),
+        new AchievementInfo(Achievement.TWITTER_BOTS_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Buy 10 Twitter bots", 1),
+        new AchievementInfo(Achievement.TWITTER_BOTS_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Buy 50 Twitter bots", 2),
+        new AchievementInfo(Achievement.TWITTER_BOTS_100, 100, AchColors[AchSpriteColor.Blue], "If I’m going to clean house, they will come in as fresh blood", "Buy 100 Twitter bots", 4),
+        new AchievementInfo(Achievement.TWITTER_BOTS_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Buy 200 Twitter bots", 6),
 
         // Global warming
-        new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_1, 1, AchColors[AchSpriteColor.Bronze], "It's not real", "Denied global warming once", 1),
+        new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_1, 1, AchColors[AchSpriteColor.Bronze], "It's created by the Chinese", "Denied global warming once", 1),
         new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_10, 10, AchColors[AchSpriteColor.Silver], "It's weather changes", "Denied global warming 10 times", 1),
         new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_50, 50, AchColors[AchSpriteColor.Gold], "The biggest lie", "Denied global warming 50 times", 2),
         new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_100, 100, AchColors[AchSpriteColor.Blue], "A total hoax", "Denied global warming 100 times", 4),
-        new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_200, 200, AchColors[AchSpriteColor.Red], "I don't believe in it", "Denied global warming 200 times", 6),
+        new AchievementInfo(Achievement.DENY_GLOBAL_WARMING_200, 200, AchColors[AchSpriteColor.Red], "I don't believe in climate change", "Denied global warming 200 times", 6),
 
         // Pussy grabber
         new AchievementInfo(Achievement.PUSSY_GRABBER_1, 1, AchColors[AchSpriteColor.Bronze], "I better use some Tic Tacs", "Pussy grabbed once", 1),
         new AchievementInfo(Achievement.PUSSY_GRABBER_10, 10, AchColors[AchSpriteColor.Silver], "Just in case I start kissing her", "Pussy grabbed 10 times", 1),
         new AchievementInfo(Achievement.PUSSY_GRABBER_50, 50, AchColors[AchSpriteColor.Gold], "It's like a magnet", "Pussy grabbed 50 times", 2),
         new AchievementInfo(Achievement.PUSSY_GRABBER_100, 100, AchColors[AchSpriteColor.Blue], "You can do anything", "Pussy grabbed 100 times", 4),
-        new AchievementInfo(Achievement.PUSSY_GRABBER_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the pussy", "Pussy grabbed 200 times", 6),
+        new AchievementInfo(Achievement.PUSSY_GRABBER_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Pussy grabbed 200 times", 6),
 
         // People fired
         new AchievementInfo(Achievement.FIRE_PEOPLE_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Fire one person", 1),
         new AchievementInfo(Achievement.FIRE_PEOPLE_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Fire 10 people", 1),
         new AchievementInfo(Achievement.FIRE_PEOPLE_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Fire 50 people", 2),
         new AchievementInfo(Achievement.FIRE_PEOPLE_100, 100, AchColors[AchSpriteColor.Blue], "I have fired many people", "Fire 100 people", 4),
-        new AchievementInfo(Achievement.FIRE_PEOPLE_200, 200, AchColors[AchSpriteColor.Red], "If Iï¿½m going to clean house, they will come in as fresh blood", "Fire 200 people", 6),
+        new AchievementInfo(Achievement.FIRE_PEOPLE_200, 200, AchColors[AchSpriteColor.Red], "If I’m going to clean house, they will come in as fresh blood", "Fire 200 people", 6),
 
         // Fake audience
-        new AchievementInfo(Achievement.FAKE_AUDIENCE_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Use fake audience once", 1),
-        new AchievementInfo(Achievement.FAKE_AUDIENCE_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Use fake audience 10 times", 1),
-        new AchievementInfo(Achievement.FAKE_AUDIENCE_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Use fake audience 50 times", 2),
-        new AchievementInfo(Achievement.FAKE_AUDIENCE_100, 100, AchColors[AchSpriteColor.Blue], "If Iï¿½m going to clean house, they will come in as fresh blood", "Use fake audience 100 times", 4),
-        new AchievementInfo(Achievement.FAKE_AUDIENCE_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Use fake audience 200 times", 6),
+        new AchievementInfo(Achievement.FAKE_AUDIENCE_1, 1, AchColors[AchSpriteColor.Bronze], "Woo!", "Use fake audience once", 1),
+        new AchievementInfo(Achievement.FAKE_AUDIENCE_10, 10, AchColors[AchSpriteColor.Silver], "*Claps*", "Use fake audience 10 times", 1),
+        new AchievementInfo(Achievement.FAKE_AUDIENCE_50, 50, AchColors[AchSpriteColor.Gold], "Look at that all these people!", "Use fake audience 50 times", 2),
+        new AchievementInfo(Achievement.FAKE_AUDIENCE_100, 100, AchColors[AchSpriteColor.Blue], "Is that a real person?", "Use fake audience 100 times", 4),
+        new AchievementInfo(Achievement.FAKE_AUDIENCE_200, 200, AchColors[AchSpriteColor.Red], "That guy must've been paid", "Use fake audience 200 times", 6),
 
         // Anti LGBT
-        new AchievementInfo(Achievement.ANTI_LGBT_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Hate on transgender once", 1),
-        new AchievementInfo(Achievement.ANTI_LGBT_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Hate on transgender 10 times", 1),
-        new AchievementInfo(Achievement.ANTI_LGBT_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Hate on transgender 50 times", 2),
-        new AchievementInfo(Achievement.ANTI_LGBT_100, 100, AchColors[AchSpriteColor.Blue], "If Iï¿½m going to clean house, they will come in as fresh blood", "Hate on transgender 100 times", 4),
-        new AchievementInfo(Achievement.ANTI_LGBT_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Hate on transgender 200 times", 6),
+        new AchievementInfo(Achievement.ANTI_LGBT_1, 1, AchColors[AchSpriteColor.Bronze], "No Love", "Hate on transgender once", 1),
+        new AchievementInfo(Achievement.ANTI_LGBT_10, 10, AchColors[AchSpriteColor.Silver], "Fear of Rainbows", "Hate on transgender 10 times", 1),
+        new AchievementInfo(Achievement.ANTI_LGBT_50, 50, AchColors[AchSpriteColor.Gold], "Rainbow in the Dark", "Hate on transgender 50 times", 2),
+        new AchievementInfo(Achievement.ANTI_LGBT_100, 100, AchColors[AchSpriteColor.Blue], "No Rainbows here", "Hate on transgender 100 times", 4),
+        new AchievementInfo(Achievement.ANTI_LGBT_200, 200, AchColors[AchSpriteColor.Red], "Unfabulous", "Hate on transgender 200 times", 6),
 
         // Rich friends
-        new AchievementInfo(Achievement.RICH_FRIENDS_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Helped one rich friend", 1),
-        new AchievementInfo(Achievement.RICH_FRIENDS_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Helped 10 rich friend", 1),
-        new AchievementInfo(Achievement.RICH_FRIENDS_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Helped 50 rich friend", 2),
-        new AchievementInfo(Achievement.RICH_FRIENDS_100, 100, AchColors[AchSpriteColor.Blue], "If Iï¿½m going to clean house, they will come in as fresh blood", "Helped 100 rich friend", 4),
-        new AchievementInfo(Achievement.RICH_FRIENDS_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Helped 200 rich friend", 6),
+        new AchievementInfo(Achievement.RICH_FRIENDS_1, 1, AchColors[AchSpriteColor.Bronze], "Here you go", "Helped one rich friend", 1),
+        new AchievementInfo(Achievement.RICH_FRIENDS_10, 10, AchColors[AchSpriteColor.Silver], "You owe me one", "Helped 10 rich friend", 1),
+        new AchievementInfo(Achievement.RICH_FRIENDS_50, 50, AchColors[AchSpriteColor.Gold], "I've got something for you", "Helped 50 rich friends", 2),
+        new AchievementInfo(Achievement.RICH_FRIENDS_100, 100, AchColors[AchSpriteColor.Blue], "I don't need your taxes", "Helped 100 rich friends", 4),
+        new AchievementInfo(Achievement.RICH_FRIENDS_200, 200, AchColors[AchSpriteColor.Red], "We're good", "Helped 200 rich friends", 6),
 
         // Soldiers
-        new AchievementInfo(Achievement.SOLDIERS_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Invest in soldiers once", 1),
-        new AchievementInfo(Achievement.SOLDIERS_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Invest in soldiers 10 times", 1),
-        new AchievementInfo(Achievement.SOLDIERS_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Invest in soldiers 50 times", 2),
-        new AchievementInfo(Achievement.SOLDIERS_100, 100, AchColors[AchSpriteColor.Blue], "If Iï¿½m going to clean house, they will come in as fresh blood", "Invest in soldiers 100 times", 4),
-        new AchievementInfo(Achievement.SOLDIERS_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Invest in soldiers 200 times", 6),
+        new AchievementInfo(Achievement.SOLDIERS_1, 1, AchColors[AchSpriteColor.Bronze], "Yes sir!", "Invest in soldiers once", 1),
+        new AchievementInfo(Achievement.SOLDIERS_10, 10, AchColors[AchSpriteColor.Silver], "Safety First", "Invest in soldiers 10 times", 1),
+        new AchievementInfo(Achievement.SOLDIERS_50, 50, AchColors[AchSpriteColor.Gold], "To protect the People", "Invest in soldiers 50 times", 2),
+        new AchievementInfo(Achievement.SOLDIERS_100, 100, AchColors[AchSpriteColor.Blue], "We've got to make America strong again", "Invest in soldiers 100 times", 4),
+        new AchievementInfo(Achievement.SOLDIERS_200, 200, AchColors[AchSpriteColor.Red], "There's nobody bigger or better at the military than I am", "Invest in soldiers 200 times", 6),
 
         // Wall bricks
-        new AchievementInfo(Achievement.WALL_1, 1, AchColors[AchSpriteColor.Bronze], "Mason", "Start building the Wall", 1),
-        new AchievementInfo(Achievement.WALL_10, 10, AchColors[AchSpriteColor.Silver], "Wall builder", "Stack 10 bricks on the Wall", 1),
-        new AchievementInfo(Achievement.WALL_50, 50, AchColors[AchSpriteColor.Gold], "Huge brick wall", "Stack 50 bricks on the Wall", 2),
-        new AchievementInfo(Achievement.WALL_100, 100, AchColors[AchSpriteColor.Blue], "Metal fence", "Stack 100 bricks on the Wall", 4),
-        new AchievementInfo(Achievement.WALL_200, 200, AchColors[AchSpriteColor.Red], "They'll pay for it", "Stack 200 bricks on the Wall", 6),
+        new AchievementInfo(Achievement.WALL_1, 1, AchColors[AchSpriteColor.Bronze], "I will build a great wall", "Start building the Wall", 1),
+        new AchievementInfo(Achievement.WALL_10, 10, AchColors[AchSpriteColor.Silver], "I'll build them very inexpensively", "Stack 10 bricks on the Wall", 1),
+        new AchievementInfo(Achievement.WALL_50, 50, AchColors[AchSpriteColor.Gold], "Mexico will pay for it!", "Stack 50 bricks on the Wall", 2),
+        new AchievementInfo(Achievement.WALL_100, 100, AchColors[AchSpriteColor.Blue], "Mark my words", "Stack 100 bricks on the Wall", 4),
+        new AchievementInfo(Achievement.WALL_200, 200, AchColors[AchSpriteColor.Red], "It's gonna be great!", "Stack 200 bricks on the Wall", 6),
 
 
     };
