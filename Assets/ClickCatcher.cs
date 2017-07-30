@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
@@ -19,7 +19,13 @@ public class ClickCatcher : MonoBehaviour
 
     private void OnMouseDown()
     {
+        HandleClick();
+    }
+
+    private void HandleClick()
+    {
         _moneyManager.AddMoney(1);
+        AchievementManager.Instance.TimesClicked++;
         DoClickEffect();
     }
 

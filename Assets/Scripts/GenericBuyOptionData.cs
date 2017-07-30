@@ -4,9 +4,9 @@ using UnityEngine;
 public class GenericBuyOptionData
 {
     public string Name = "Option";
-    public string Identifier = "Identifier";
     public string Description = @"This is an option";
     public Sprite Icon;
+    public BuyAchievementType AssociatedAchievement;
     public long StartingCost = 100;
     public long AvailableAtMoney = 0;
     public float CostMultiplierPerLevel = 1;
