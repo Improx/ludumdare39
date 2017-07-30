@@ -1,4 +1,12 @@
 public enum BuyAchievementType : int
 {
-    HACKERS,
+    Hackers,
+    TwitterBots,
+    WallBricks,
+    FakeAudience,
+    AntiLgbt,
+    PeopleFired,
+    GlobalWarming,
+    RichFriends,
+    Soldiers,
 };

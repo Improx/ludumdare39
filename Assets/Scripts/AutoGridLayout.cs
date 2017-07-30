@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class AutoGridLayout : GridLayoutGroup
 {
     [SerializeField]
-    private bool m_IsColumn;
+    private bool _mIsColumn;
     [SerializeField]
-    private int m_Column = 1, m_Row = 1;
+    private int _mColumn = 1, _mRow = 1;
 
     public override void CalculateLayoutInputHorizontal()
     {
@@ -17,9 +17,9 @@ public class AutoGridLayout : GridLayoutGroup
         float iColumn = -1;
         float iRow = -1;
 
-        if (m_IsColumn)
+        if (_mIsColumn)
         {
-            iColumn = m_Column;
+            iColumn = _mColumn;
             if (iColumn <= 0)
             {
                 iColumn = 1;
@@ -28,7 +28,7 @@ public class AutoGridLayout : GridLayoutGroup
         }
         else
         {
-            iRow = m_Row;
+            iRow = _mRow;
             if (iRow <= 0)
             {
                 iRow = 1;

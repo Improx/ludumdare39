@@ -11,11 +11,11 @@ public partial class AchievementManager : MonoBehaviour
     public static readonly Dictionary<AchSpriteColor, Color> AchColors =
         new Dictionary<AchSpriteColor, Color>
         {
-            {AchSpriteColor.BRONZE, 0x4f351c.ToColor()},
-            {AchSpriteColor.SILVER, 0xadaba9.ToColor()},
-            {AchSpriteColor.GOLD, 0xf4aa42.ToColor()},
-            {AchSpriteColor.BLUE, 0x0e2577.ToColor()},
-            {AchSpriteColor.RED, 0xa51c15.ToColor()},
+            {AchSpriteColor.Bronze, 0x4f351c.ToColor()},
+            {AchSpriteColor.Silver, 0xadaba9.ToColor()},
+            {AchSpriteColor.Gold, 0xf4aa42.ToColor()},
+            {AchSpriteColor.Blue, 0x0e2577.ToColor()},
+            {AchSpriteColor.Red, 0xa51c15.ToColor()},
         };
 
     public enum Achievement : int
@@ -33,15 +33,15 @@ public partial class AchievementManager : MonoBehaviour
     public static readonly List<AchievementInfo> Achievements = new List<AchievementInfo>
     {
         // Clicking
-        new AchievementInfo(Achievement.CLICKS_1, 1, AchColors[AchSpriteColor.BRONZE], "First mistake", "Clicked once", 1),
-        new AchievementInfo(Achievement.CLICKS_100, 100, AchColors[AchSpriteColor.SILVER], "100 clicks", "Clicked 100 times", 1),
-        new AchievementInfo(Achievement.CLICKS_500, 500, AchColors[AchSpriteColor.GOLD], "500 clicks", "Clicked 500 times", 1),
-        new AchievementInfo(Achievement.CLICKS_2500, 2500, AchColors[AchSpriteColor.BLUE], "2500 clicks", "Clicked 2500 times", 2),
-        new AchievementInfo(Achievement.CLICKS_10000, 10000, AchColors[AchSpriteColor.RED], "10000 clicks", "Clicked 10000 times", 5),
+        new AchievementInfo(Achievement.CLICKS_1, 1, AchColors[AchSpriteColor.Bronze], "First mistake", "Clicked once", 1),
+        new AchievementInfo(Achievement.CLICKS_100, 100, AchColors[AchSpriteColor.Silver], "100 clicks", "Clicked 100 times", 1),
+        new AchievementInfo(Achievement.CLICKS_500, 500, AchColors[AchSpriteColor.Gold], "500 clicks", "Clicked 500 times", 1),
+        new AchievementInfo(Achievement.CLICKS_2500, 2500, AchColors[AchSpriteColor.Blue], "2500 clicks", "Clicked 2500 times", 2),
+        new AchievementInfo(Achievement.CLICKS_10000, 10000, AchColors[AchSpriteColor.Red], "10000 clicks", "Clicked 10000 times", 5),
 
         // Russian hackers
-        new AchievementInfo(Achievement.BUY_HACKERS_1, 1, AchColors[AchSpriteColor.BRONZE], "Friend of Putin", "Hired a Russian hacker", 1),
-        new AchievementInfo(Achievement.BUY_HACKERS_5, 5, AchColors[AchSpriteColor.SILVER], "Red-faced", "Hired 5 Russian hackers", 5),
+        new AchievementInfo(Achievement.BUY_HACKERS_1, 1, AchColors[AchSpriteColor.Bronze], "Friend of Putin", "Hired a Russian hacker", 1),
+        new AchievementInfo(Achievement.BUY_HACKERS_5, 5, AchColors[AchSpriteColor.Silver], "Red-faced", "Hired 5 Russian hackers", 5),
     };
 
     [SerializeField] private AchievementSquare _achievementSquareObject;
@@ -56,7 +56,7 @@ public partial class AchievementManager : MonoBehaviour
     {
         switch (type)
         {
-            case BuyAchievementType.HACKERS:
+            case BuyAchievementType.Hackers:
                 BoughtHackers += amount;
                 break;
             default:

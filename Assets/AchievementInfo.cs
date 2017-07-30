@@ -45,7 +45,6 @@ public class AchievementInfo : IIncomeMultiplier
 
     public float GetMultiplierIfUnlocked()
     {
-        Debug.Log(PercentageReward);
         return Unlocked ? PercentageReward / 100f : 1;
     }
 }

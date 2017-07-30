@@ -1,8 +1,8 @@
 ﻿public enum AchSpriteColor
 {
-    BRONZE,
-    SILVER,
-    GOLD,
-    BLUE,
-    RED
+    Bronze,
+    Silver,
+    Gold,
+    Blue,
+    Red
 }
