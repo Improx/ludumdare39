@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -67,8 +68,8 @@ public class MoneyManager : MonoBehaviour
     {
         string MString = Money.ToString();
         int Len = MString.Length;
-        int Factor = (int)Mathf.Floor((len - 1) / 3);
-        float Cash = Money / Mathf.Pow(1000, factor);
+        int Factor = (int)Mathf.Floor((Len - 1) / 3);
+        float Cash = Money / Mathf.Pow(1000, Factor);
         string Final = Cash.ToString(CultureInfo.InvariantCulture);
         return Final + _suffixes[Factor];
     }

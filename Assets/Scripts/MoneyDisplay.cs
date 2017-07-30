@@ -11,12 +11,11 @@ public class MoneyDisplay : MonoBehaviour {
     public TextMeshProUGUI MoneyDisplayText;
    
     private void Start () {
-        _moneymanager = MoneyManager.Instance();
+        _moneymanager = MoneyManager.Instance;
         MoneyDisplayText.text = "0C";
 
     } 
 
-    // Format the money string and set it
     public void SetDisplayAmount(long newAmount) {
         MoneyDisplayText.text = _moneymanager.MoneyString();
     }
