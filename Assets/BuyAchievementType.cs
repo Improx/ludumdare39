@@ -9,4 +9,5 @@ public enum BuyAchievementType : int
     GlobalWarming,
     RichFriends,
     Soldiers,
+    PussyGrabbers,
 };
