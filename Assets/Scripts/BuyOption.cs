@@ -18,7 +18,7 @@ public class BuyOption : MonoBehaviour
     private int _ownedAmount = 0;
     private long _currentCost = 0;
 
-    private float lastMoneyEarnedTime = 0;
+    private float _lastMoneyEarnedTime = 0;
 
     public void Initialize(BuyOptionData data)
     {
@@ -39,7 +39,7 @@ public class BuyOption : MonoBehaviour
 
     private void Update_HandleEarnings()
     {
-        if (Time.timeSinceLevelLoad > lastMoneyEarnedTime + _optionData.TickTimeInSeconds)
+        if (Time.timeSinceLevelLoad > _lastMoneyEarnedTime + _optionData.TickTimeInSeconds)
         {
             long moneyToEarn = _optionData.GetEarningsAtLevel(_ownedAmount);
             if (moneyToEarn > 0)
@@ -47,7 +47,7 @@ public class BuyOption : MonoBehaviour
                 //print("earned money " + _optionData.Name + " " + lastMoneyEarnedTime);
                 MoneyManager.Instance.AddMoney(moneyToEarn);
             }
-            lastMoneyEarnedTime = Time.timeSinceLevelLoad;
+            _lastMoneyEarnedTime = Time.timeSinceLevelLoad;
         }
     }
 
@@ -81,7 +81,7 @@ public class BuyOption : MonoBehaviour
 
     private void SetBuyAmount(int newAmount)
     {
-        _buyAmountText.text = newAmount.ToString() + "x";
+        _buyAmountText.text = newAmount + "x";
     }
 
     public void Buy()
