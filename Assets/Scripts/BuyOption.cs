@@ -132,10 +132,14 @@ public class BuyOption : MonoBehaviour
         MoneyManager.Instance.ReduceMoney(_currentCost);
 
         // Increase owned amount
-        _ownedAmount = _ownedAmount + _buyAmountModifier.CurrentModifier;
+        int amountToBuy = _buyAmountModifier.CurrentModifier;
+        _ownedAmount = _ownedAmount + amountToBuy;
         SetOwnedAmount(_ownedAmount);
 
         // Set new cost
         SetCost(_optionData.GetCostOfLevel(_ownedAmount));
+
+        // Add achievement stat
+        AchievementManager.Instance.AddBuyAchievementStat(_optionData.AssociatedAchievement, amountToBuy);
     }
 }

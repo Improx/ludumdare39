@@ -44,6 +44,11 @@ namespace Improx.Utility
 			return new Color(r, g, b, 255);
 		}
 
+	    public static Color Normalize(this Color oldColor)
+	    {
+	        return new Color(oldColor.r/255, oldColor.g/255, oldColor.b/255, oldColor.a/255);
+	    }
+
 		public static List<T> Splice<T>(this List<T> list, int index, int count)
 		{
 			List<T> range = list.GetRange(index, count);
