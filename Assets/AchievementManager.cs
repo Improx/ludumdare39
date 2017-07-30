@@ -60,7 +60,8 @@ public partial class AchievementManager : MonoBehaviour
                 BoughtHackers += amount;
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+                Debug.LogWarning("Achievement not found: " + type);
+                break;
         }
     }
 

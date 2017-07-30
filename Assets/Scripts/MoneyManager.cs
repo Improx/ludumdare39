@@ -56,7 +56,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
-        //Money += 1;
+        Money += 1;
     }
 
     public void AddIncomeMultiplier(IIncomeMultiplier multiplier)
@@ -88,14 +88,17 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Format and return the money as a string
-    public string MoneyString(long NewMoney)
+    public string MoneyString(long newMoney)
     {
-        string MString = NewMoney.ToString();
-        int Len = MString.Length;
-        int Factor = (int)Mathf.Floor((Len - 1) / 3) - 1;
-        if (Factor < 1){ return MString + _suffixes[0]; }
-        float Cash = NewMoney / Mathf.Pow(1000, Factor);
-        string Final = Cash.ToString("F3", CultureInfo.InvariantCulture);
-        return Final + _suffixes[Factor];
+        string mString = newMoney.ToString();
+        int mStringLength = mString.Length;
+
+        int factor = (int)Mathf.Floor((mStringLength - 1) / 3) - 1;
+        if (factor < 1){ return mString + _suffixes[0]; }
+
+        float cash = newMoney / Mathf.Pow(1000, factor);
+
+        string final = cash.ToString("F3", CultureInfo.InvariantCulture);
+        return final + _suffixes[factor];
     }
 }
