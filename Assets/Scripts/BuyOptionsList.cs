@@ -11,6 +11,13 @@ public class BuyOptionsList : MonoBehaviour
 
     private void Start()
     {
+        _buyOptions.Options.Sort(
+            (x, y) =>
+            {
+                var i = x.StartingCost < y.StartingCost ? -1 : 1;
+                return i;
+            });
+
         foreach (BuyOptionData buyOption in _buyOptions.Options)
         {
             GameObject obj = Instantiate(_buyOptionObject, _buyOptionParent.transform);
