@@ -88,13 +88,13 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Format and return the money as a string
-    public string MoneyString()
+    public string MoneyString(long NewMoney)
     {
-        string MString = Money.ToString();
+        string MString = NewMoney.ToString();
         int Len = MString.Length;
         int Factor = (int)Mathf.Floor((Len - 1) / 3) - 1;
         if (Factor < 1){ return MString + _suffixes[0]; }
-        float Cash = Money / Mathf.Pow(1000, Factor);
+        float Cash = NewMoney / Mathf.Pow(1000, Factor);
         string Final = Cash.ToString("F3", CultureInfo.InvariantCulture);
         return Final + _suffixes[Factor];
     }

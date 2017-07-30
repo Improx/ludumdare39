@@ -17,6 +17,6 @@ public class MoneyDisplay : MonoBehaviour {
     } 
 
     public void SetDisplayAmount(long newAmount) {
-        MoneyDisplayText.text = _moneymanager.MoneyString();
+        MoneyDisplayText.text = _moneymanager.MoneyString(newAmount);
     }
 }
