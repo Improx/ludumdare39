@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class BuyOption : MonoBehaviour
 {
     private BuyOptionData _optionData;
+    private bool _optionUnlocked;
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private TextMeshProUGUI _ownedAmountText;
     [SerializeField] private TextMeshProUGUI _buyAmountText;
 
     [SerializeField] private Image _iconImage;
+    [SerializeField] private Button _buyButton;
 
     private BuyAmountModifier _buyAmountModifier;
+    private MoneyManager _moneyManager;
     private int _ownedAmount = 0;
     private long _currentCost = 0;
 
@@ -29,7 +32,21 @@ public class BuyOption : MonoBehaviour
 
         _buyAmountModifier = BuyAmountModifier.Instance;
         _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmount);
-        _buyAmountModifier.OnModifierChangedEvent.AddListener((amount) => SetCost(CalculateCostForAmount(amount)));
+        _buyAmountModifier.OnModifierChangedEvent.AddListener(amount => SetCost(CalculateCostForAmount(amount)));
+
+        _moneyManager = MoneyManager.Instance;
+        _moneyManager.OnMoneyChangedEvent.AddListener(CheckIfEnoughMoneyToUnlock);
+        _moneyManager.OnMoneyChangedEvent.AddListener(CheckIfEnoughMoneyToBuy);
+
+        SetActiveIfEnoughMoneyToUnlock(MoneyManager.Instance.Money);
+        CheckIfEnoughMoneyToBuy(MoneyManager.Instance.Money);
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from all events
+        _moneyManager.OnMoneyChangedEvent.RemoveListener(CheckIfEnoughMoneyToUnlock);
+        _moneyManager.OnMoneyChangedEvent.RemoveListener(CheckIfEnoughMoneyToBuy);
     }
 
     private void Update()
@@ -44,11 +61,36 @@ public class BuyOption : MonoBehaviour
             long moneyToEarn = _optionData.GetEarningsAtLevel(_ownedAmount);
             if (moneyToEarn > 0)
             {
-                //print("earned money " + _optionData.Name + " " + lastMoneyEarnedTime);
                 MoneyManager.Instance.AddMoney(moneyToEarn);
             }
             _lastMoneyEarnedTime = Time.timeSinceLevelLoad;
         }
+    }
+
+    private void SetActiveIfEnoughMoneyToUnlock(long currentMoney)
+    {
+        gameObject.SetActive(HasEnoughMoneyToUnlock(currentMoney));
+    }
+
+    private void CheckIfEnoughMoneyToUnlock(long currentMoney)
+    {
+        // If we haven't unlocked this option yet and we have enough money to show it, show it!
+        if (_optionUnlocked == false && HasEnoughMoneyToUnlock(currentMoney))
+        {
+            gameObject.SetActive(true);
+            //_moneyManager.OnMoneyChangedEvent.RemoveListener(CheckIfEnoughMoneyToUnlock);
+        }
+    }
+
+    private bool HasEnoughMoneyToUnlock(long currentMoney)
+    {
+        return currentMoney >= _optionData.AvailableAtMoney;
+    }
+
+    private void CheckIfEnoughMoneyToBuy(long currentMoney)
+    {
+        // Show grayed out if we don't have enough money to buy
+        _buyButton.interactable = currentMoney >= _currentCost;
     }
 
     private long CalculateCostForAmount(int amount)

@@ -51,6 +51,11 @@ public class MoneyManager : MonoBehaviour
         Money = 0;
     }
 
+    private void Update()
+    {
+        //Money += 1;
+    }
+
     // Adder
     public void AddMoney(long amount)
     {

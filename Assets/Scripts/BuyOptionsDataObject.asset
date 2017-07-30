@@ -15,17 +15,21 @@ MonoBehaviour:
   - Name: Russian hackers
     Identifier: hackers
     Description: 
-    Icon: {fileID: 21300000, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-    StartingCost: 100
+    Icon: {fileID: 21300000, guid: 78793e7ae1b958c458759f925a958483, type: 3}
+    StartingCost: 10
     AvailableAtMoney: 0
-    CostMultiplierPerLevel: 1.1
+    CostMultiplierPerLevel: 1.5
+    EarningPerLevel: 1
+    TickTimeInSeconds: 1
   - Name: Twitter bots
     Identifier: twitter bots
     Description: 
-    Icon: {fileID: 21300002, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
+    Icon: {fileID: 21300000, guid: 062ca6c85d5219d4d98d7ddd606edf3f, type: 3}
     StartingCost: 1000
     AvailableAtMoney: 200
-    CostMultiplierPerLevel: 1.1
+    CostMultiplierPerLevel: 1.5
+    EarningPerLevel: 3
+    TickTimeInSeconds: 1
   - Name: Bricks for wall
     Identifier: wall
     Description: 
@@ -33,10 +37,23 @@ MonoBehaviour:
     StartingCost: 10000
     AvailableAtMoney: 300
     CostMultiplierPerLevel: 1.1
+    EarningPerLevel: 10
+    TickTimeInSeconds: 1
   - Name: Fake audience members
     Identifier: audience
     Description: 
     Icon: {fileID: 21300006, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-    StartingCost: 23498350
-    AvailableAtMoney: 5000
-    CostMultiplierPerLevel: 1.1
+    StartingCost: 3000
+    AvailableAtMoney: 1000
+    CostMultiplierPerLevel: 1.5
+    EarningPerLevel: 5
+    TickTimeInSeconds: 1
+  - Name: Anti-LGBT propaganda
+    Identifier: anti trans
+    Description: 
+    Icon: {fileID: 21300000, guid: 062ca6c85d5219d4d98d7ddd606edf3f, type: 3}
+    StartingCost: 10000
+    AvailableAtMoney: 2000
+    CostMultiplierPerLevel: 1.5
+    EarningPerLevel: 10
+    TickTimeInSeconds: 1
