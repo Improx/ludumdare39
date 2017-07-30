@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MoneyManager : MonoBehaviour
 {
 
     public static MoneyManager Instance;
+
+    public MoneyAmountChangedEvent OnMoneyChangedEvent = new MoneyAmountChangedEvent();
 
     private long _money;
 
@@ -14,8 +17,11 @@ public class MoneyManager : MonoBehaviour
         get { return _money; }
         private set
         {
-            _money = value;
-            _moneyDisplay.SetDisplayAmount(_money);
+            if (value != _money) {
+                OnMoneyChangedEvent.Invoke(value);
+                _money = value;
+                _moneyDisplay.SetDisplayAmount(_money);
+            }
         }
     }
 
@@ -54,5 +60,6 @@ public class MoneyManager : MonoBehaviour
     {
         return Money.ToString().Length;
     }
+
 
 }
