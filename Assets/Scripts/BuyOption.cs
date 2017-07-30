@@ -78,7 +78,8 @@ public class BuyOption : MonoBehaviour
         if (_optionUnlocked == false && HasEnoughMoneyToUnlock(currentMoney))
         {
             gameObject.SetActive(true);
-            //_moneyManager.OnMoneyChangedEvent.RemoveListener(CheckIfEnoughMoneyToUnlock);
+            _optionUnlocked = true;
+            _moneyManager.OnMoneyChangedEvent.RemoveListener(CheckIfEnoughMoneyToUnlock);
         }
     }
 
@@ -107,7 +108,6 @@ public class BuyOption : MonoBehaviour
     {
         Debug.Assert(newCost > 0);
         _currentCost = newCost;
-        print(newCost);
         _costText.text = _currentCost.ToString();
     }
 

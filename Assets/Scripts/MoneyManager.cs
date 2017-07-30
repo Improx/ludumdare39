@@ -67,13 +67,14 @@ public class MoneyManager : MonoBehaviour
     {
         Money -= amount;
     }
-    
+
     // Format and return the money as a string
     public string MoneyString()
     {
         string MString = Money.ToString();
         int Len = MString.Length;
-        int Factor = (int)Mathf.Floor((Len - 1) / 3);
+        int Factor = (int)Mathf.Floor((Len - 1) / 3) - 1;
+        if (Factor < 1){ return MString + _suffixes[0]; }
         float Cash = Money / Mathf.Pow(1000, Factor);
         string Final = Cash.ToString("F3", CultureInfo.InvariantCulture);
         return Final + _suffixes[Factor];
