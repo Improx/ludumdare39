@@ -66,8 +66,6 @@ public partial class AchievementManager : MonoBehaviour
 
     #endregion
 
-    private List<AchievementSquare> _achievementSquares = new List<AchievementSquare>();
-
     private void Awake()
     {
         Instance = this;
@@ -80,8 +78,6 @@ public partial class AchievementManager : MonoBehaviour
             GameObject achSquareGameObject = Instantiate(_achievementSquareObject.gameObject, _achievementSquareParent);
             var achievementSquare = achSquareGameObject.GetComponent<AchievementSquare>();
             achievementSquare.SetInfo(achievementInfo);
-
-            _achievementSquares.Add(achievementSquare);
         }
     }
 

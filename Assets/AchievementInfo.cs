@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AchievementInfo
+public class AchievementInfo : IIncomeMultiplier
 {
     public AchievementManager.Achievement Id;
     public string Name;
@@ -22,9 +22,15 @@ public class AchievementInfo
 
             if (_unlocked)
             {
-                OnUnlockedEvent.Invoke();
+                SetUnlocked();
             }
         }
+    }
+
+    private void SetUnlocked()
+    {
+        MoneyManager.Instance.AddIncomeMultiplier(this);
+        OnUnlockedEvent.Invoke();
     }
 
     public AchievementInfo(AchievementManager.Achievement id, long requirement, Color unlockColor, string name, string description, int percentageReward)
@@ -37,4 +43,9 @@ public class AchievementInfo
         Unlocked = false;
     }
 
+    public float GetMultiplierIfUnlocked()
+    {
+        Debug.Log(PercentageReward);
+        return Unlocked ? PercentageReward / 100f : 1;
+    }
 }

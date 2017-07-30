@@ -9,20 +9,23 @@ public class MoneyManager : MonoBehaviour
 
     public static MoneyManager Instance;
 
+    [SerializeField]
+    private MoneyDisplay _moneyDisplay;
+
     public MoneyAmountChangedEvent OnMoneyChangedEvent = new MoneyAmountChangedEvent();
+    private readonly List<IIncomeMultiplier> _incomeMultipliers = new List<IIncomeMultiplier>();
 
     private long _money;
-
     public long Money
     {
         get { return _money; }
         private set
         {
-            if (value != _money) {
-                OnMoneyChangedEvent.Invoke(value);
-                _money = value;
-                _moneyDisplay.SetDisplayAmount(_money);
-            }
+            if (value == _money) return;
+
+            OnMoneyChangedEvent.Invoke(value);
+            _money = value;
+            _moneyDisplay.SetDisplayAmount(_money);
         }
     }
 
@@ -39,8 +42,7 @@ public class MoneyManager : MonoBehaviour
         "ZC"
     };
 
-    [SerializeField]
-    private MoneyDisplay _moneyDisplay;
+    private float _totalIncomeMultiplier = 1;
 
     private void Awake()
     {
@@ -49,6 +51,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Start () {
         Money = 0;
+        CalculateTotalIncomeMultiplier();
     }
 
     private void Update()
@@ -56,10 +59,26 @@ public class MoneyManager : MonoBehaviour
         //Money += 1;
     }
 
+    public void AddIncomeMultiplier(IIncomeMultiplier multiplier)
+    {
+        _incomeMultipliers.Add(multiplier);
+        CalculateTotalIncomeMultiplier();
+    }
+
+    private void CalculateTotalIncomeMultiplier()
+    {
+        _totalIncomeMultiplier = 1;
+        foreach (IIncomeMultiplier multiplier in _incomeMultipliers)
+        {
+            print(multiplier.GetMultiplierIfUnlocked());
+            _totalIncomeMultiplier += multiplier.GetMultiplierIfUnlocked();
+        }
+    }
+
     // Adder
     public void AddMoney(long amount)
     {
-        Money += amount;
+        Money += (long)_totalIncomeMultiplier * amount;
     }
 
     // For buying stuff
@@ -79,7 +98,4 @@ public class MoneyManager : MonoBehaviour
         string Final = Cash.ToString("F3", CultureInfo.InvariantCulture);
         return Final + _suffixes[Factor];
     }
-
-
-
 }
