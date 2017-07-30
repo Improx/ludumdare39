@@ -70,7 +70,7 @@ public class MoneyManager : MonoBehaviour
         int Len = MString.Length;
         int Factor = (int)Mathf.Floor((Len - 1) / 3);
         float Cash = Money / Mathf.Pow(1000, Factor);
-        string Final = Cash.ToString(CultureInfo.InvariantCulture);
+        string Final = Cash.ToString("F3", CultureInfo.InvariantCulture);
         return Final + _suffixes[Factor];
     }
 
