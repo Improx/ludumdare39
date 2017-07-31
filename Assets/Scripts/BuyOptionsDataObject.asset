@@ -37,7 +37,7 @@ MonoBehaviour:
     StartingCost: 1000
     AvailableAtMoney: 300
     RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
+    EarningPerLevel: 50
     TickTimeInSeconds: 1
   - Name: Twitter bots
     Description: 
@@ -46,50 +46,59 @@ MonoBehaviour:
     StartingCost: 25000
     AvailableAtMoney: 900
     RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 3
-    TickTimeInSeconds: 1
-  - Name: Help rich friends
-    Description: 
-    Icon: {fileID: 21300000, guid: 0e7c7077ed478704aac3062b81eeb48c, type: 3}
-    AssociatedAchievement: 7
-    StartingCost: 10000000
-    AvailableAtMoney: 4000
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
-    TickTimeInSeconds: 1
-  - Name: Hire soldiers
-    Description: 
-    Icon: {fileID: 21300000, guid: 1753da22100bb9d48b1abee61ce4ee6d, type: 3}
-    AssociatedAchievement: 8
-    StartingCost: 10000000
-    AvailableAtMoney: 7500
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 5000
-    TickTimeInSeconds: 1
-  - Name: Build a wall
-    Description: 
-    Icon: {fileID: 21300000, guid: 039f4065c93648c41a6755981278feac, type: 3}
-    AssociatedAchievement: 2
-    StartingCost: 10000000
-    AvailableAtMoney: 300
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
+    EarningPerLevel: 300
     TickTimeInSeconds: 1
   - Name: Russian hackers
     Description: 
     Icon: {fileID: 21300000, guid: 78793e7ae1b958c458759f925a958483, type: 3}
     AssociatedAchievement: 0
-    StartingCost: 10000000
-    AvailableAtMoney: 10000
+    StartingCost: 100000
+    AvailableAtMoney: 20000
     RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 1
+    EarningPerLevel: 900
+    TickTimeInSeconds: 1
+  - Name: Grab a pussy
+    Description: 
+    Icon: {fileID: 21300000, guid: 3de5ee74856557141bda307a6717de29, type: 3}
+    AssociatedAchievement: 9
+    StartingCost: 350000
+    AvailableAtMoney: 95000
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 2000
+    TickTimeInSeconds: 1
+  - Name: Help rich friends
+    Description: 
+    Icon: {fileID: 21300000, guid: 0e7c7077ed478704aac3062b81eeb48c, type: 3}
+    AssociatedAchievement: 7
+    StartingCost: 1000000
+    AvailableAtMoney: 300000
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 50000
     TickTimeInSeconds: 1
   - Name: Anti-LGBT propaganda
     Description: 
     Icon: {fileID: 21300000, guid: 062ca6c85d5219d4d98d7ddd606edf3f, type: 3}
     AssociatedAchievement: 4
-    StartingCost: 10000000
-    AvailableAtMoney: 1200
+    StartingCost: 200000000
+    AvailableAtMoney: 900000
     RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
+    EarningPerLevel: 350000
+    TickTimeInSeconds: 1
+  - Name: Build a wall
+    Description: 
+    Icon: {fileID: 21300000, guid: 039f4065c93648c41a6755981278feac, type: 3}
+    AssociatedAchievement: 2
+    StartingCost: 5000000000
+    AvailableAtMoney: 180000000
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 999999
+    TickTimeInSeconds: 1
+  - Name: Hire soldiers
+    Description: 
+    Icon: {fileID: 21300000, guid: 1753da22100bb9d48b1abee61ce4ee6d, type: 3}
+    AssociatedAchievement: 8
+    StartingCost: 9900000000000
+    AvailableAtMoney: 4000000000
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 45000000
     TickTimeInSeconds: 1
