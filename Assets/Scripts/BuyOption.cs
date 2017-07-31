@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BuyOption : MonoBehaviour
@@ -20,6 +21,8 @@ public class BuyOption : MonoBehaviour
     private MoneyManager _moneyManager;
     public int OwnedAmount { get; private set; }
     private long _currentCost = 0;
+
+    public UnityEvent OnBoughtEvent = new UnityEvent();
 
     private float _lastMoneyEarnedTime = 0;
 
@@ -141,5 +144,7 @@ public class BuyOption : MonoBehaviour
 
         // Add achievement stat
         AchievementManager.Instance.AddBuyAchievementStat(OptionData.AssociatedAchievement, amountToBuy);
+
+        OnBoughtEvent.Invoke();
     }
 }

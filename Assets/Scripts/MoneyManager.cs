@@ -44,7 +44,7 @@ public class MoneyManager : MonoBehaviour
 
     public static readonly string CurrencyName = "Controversy";
 
-    private float _totalIncomeMultiplier = 1;
+    public float TotalIncomeMultiplier { get; private set; } = 1;
 
     private void Awake()
     {
@@ -69,19 +69,19 @@ public class MoneyManager : MonoBehaviour
 
     private void CalculateTotalIncomeMultiplier()
     {
-        _totalIncomeMultiplier = 1;
+        TotalIncomeMultiplier = 1;
         foreach (IIncomeMultiplier multiplier in _incomeMultipliers)
         {
-            print(multiplier.GetMultiplierIfUnlocked());
-            _totalIncomeMultiplier += multiplier.GetMultiplierIfUnlocked();
+            TotalIncomeMultiplier += multiplier.GetMultiplierIfUnlocked();
         }
-        Stats.Instance.GameStats[StatType.TOTAL_MULTIPLIER] = (long)_totalIncomeMultiplier;
+        Stats.Instance.GameStats[StatType.TOTAL_MULTIPLIER] = (long)TotalIncomeMultiplier * 100;
+        print(TotalIncomeMultiplier);
     }
 
     // Adder
     public void AddMoney(long amount)
     {
-        long toAdd = (long)_totalIncomeMultiplier * amount;
+        long toAdd = (long)(TotalIncomeMultiplier * amount);
         Money += toAdd;
         Stats.Instance.GameStats[StatType.CONTROVERSY_CAUSED] += toAdd;
     }

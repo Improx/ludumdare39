@@ -62,6 +62,9 @@ public class Stats : MonoBehaviour
                 case StatType.CONTROVERSY_CAUSED:
                     value = MoneyManager.MoneyString(stat.Value);
                     break;
+                case StatType.TOTAL_MULTIPLIER:
+                    value = MoneyManager.Instance.TotalIncomeMultiplier * 100 + " %";
+                    break;
             }
 
             newText += $"{title}: {value}\n";

@@ -13,6 +13,8 @@ public class BuyOptionTooltipOpener : GenericToolTipOpener
         _buyOption = GetComponent<BuyOption>();
         _buyOptionData = _buyOption.OptionData;
         _buyOptionHolder = transform.parent.parent.GetComponent<RectTransform>();
+
+        _buyOption.OnBoughtEvent.AddListener(RefreshInfo);
     }
 
     public override void OpenTooltipWithCurrentInfo()
@@ -29,5 +31,13 @@ public class BuyOptionTooltipOpener : GenericToolTipOpener
 
         Tooltip.Instance.SetHolderContainer(_buyOptionHolder);
         Tooltip.Instance.SetContentsAndShow(_buyOptionData.Name, tooltipBody);
+    }
+
+    public void RefreshInfo()
+    {
+        if (Tooltip.Instance.CurrentController == this)
+        {
+            OpenTooltipWithCurrentInfo();
+        }
     }
 }

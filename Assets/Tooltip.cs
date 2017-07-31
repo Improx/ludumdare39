@@ -14,7 +14,7 @@ public class Tooltip : MonoBehaviour
     [SerializeField] private GameObject _toolTipObject;
     private RectTransform _toolTipObjectRect;
 
-    private GenericToolTipOpener _currentController;
+    public GenericToolTipOpener CurrentController { get; private set; }
     private RectTransform _holderContainer;
     private Vector3[] _holderCorners = new Vector3[4];
 
@@ -42,14 +42,14 @@ public class Tooltip : MonoBehaviour
 
     public void SetCurrentController(GenericToolTipOpener controller)
     {
-        _currentController = controller;
+        CurrentController = controller;
     }
 
     public void RemoveController(GenericToolTipOpener controller)
     {
-        if (_currentController != controller) return;
+        if (CurrentController != controller) return;
 
-        _currentController = null;
+        CurrentController = null;
         Hide();
     }
 
@@ -62,7 +62,7 @@ public class Tooltip : MonoBehaviour
 
     private void Update()
     {
-        if (!_currentController) return;
+        if (!CurrentController) return;
 
         Update_FollowMouse();
     }
