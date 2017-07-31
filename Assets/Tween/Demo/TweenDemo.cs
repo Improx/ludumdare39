@@ -1,4 +1,4 @@
-﻿/*
+/*
 The MIT License (MIT)
 Copyright (c) 2016 Digital Ruby, LLC
 http://www.digitalruby.com
@@ -10,10 +10,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 using UnityEngine;
-using System.Collections;
 
 // for your own scripts make sure to add the following line:
-using DigitalRuby.Tween;
 using UnityEngine.SceneManagement;
 
 namespace DigitalRuby.Tween

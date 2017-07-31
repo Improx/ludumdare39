@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Improx.Utility;
 using UnityEngine;
 using UnityEngine.UI;

@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4268736780552144}
   - component: {fileID: 114229045463097102}
-  - component: {fileID: 114581152452408594}
   - component: {fileID: 114112008874831168}
+  - component: {fileID: 114240916300933476}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e107a6df070053d4193438c0feff6c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114581152452408594
+--- !u!114 &114240916300933476
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404060286510820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99449c577c0b44649992b5139ad3ecd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 37362d054667b3443be468158cfb83cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _clickSound: {fileID: 8300000, guid: 4abaef0f3de5e604a88b4d5748e63138, type: 3}

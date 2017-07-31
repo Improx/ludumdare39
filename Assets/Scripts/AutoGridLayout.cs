@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 [ExecuteInEditMode]
 [AddComponentMenu("Layout/Auto Grid Layout Group", 152)]
