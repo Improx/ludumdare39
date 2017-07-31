@@ -26,6 +26,7 @@ public class ClickCatcher : MonoBehaviour
     {
         _moneyManager.AddMoney(1);
         AchievementManager.Instance.TimesClicked++;
+        Stats.Instance.GameStats[StatType.TOTAL_CLICKS]++;
         DoClickEffect();
     }
 

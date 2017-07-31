@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    private readonly List<string> _suffixes = new List<string>
+    private static readonly List<string> _suffixes = new List<string>
     {
         "C",
         "KC",
@@ -56,7 +56,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
-        Money += 1;
+        AddMoney(1);
     }
 
     public void AddIncomeMultiplier(IIncomeMultiplier multiplier)
@@ -73,12 +73,15 @@ public class MoneyManager : MonoBehaviour
             print(multiplier.GetMultiplierIfUnlocked());
             _totalIncomeMultiplier += multiplier.GetMultiplierIfUnlocked();
         }
+        Stats.Instance.GameStats[StatType.TOTAL_MULTIPLIER] = (long)_totalIncomeMultiplier;
     }
 
     // Adder
     public void AddMoney(long amount)
     {
-        Money += (long)_totalIncomeMultiplier * amount;
+        long toAdd = (long)_totalIncomeMultiplier * amount;
+        Money += toAdd;
+        Stats.Instance.GameStats[StatType.CONTROVERSY_CAUSED] += toAdd;
     }
 
     // For buying stuff
@@ -88,7 +91,7 @@ public class MoneyManager : MonoBehaviour
     }
 
     // Format and return the money as a string
-    public string MoneyString(long newMoney)
+    public static string MoneyString(long newMoney)
     {
         string mString = newMoney.ToString();
         int mStringLength = mString.Length;

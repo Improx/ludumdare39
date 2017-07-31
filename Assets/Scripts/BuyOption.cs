@@ -108,7 +108,7 @@ public class BuyOption : MonoBehaviour
     {
         Debug.Assert(newCost > 0);
         _currentCost = newCost;
-        _costText.text = MoneyManager.Instance.MoneyString(_currentCost);// _currentCost.ToString();
+        _costText.text = MoneyManager.MoneyString(_currentCost);// _currentCost.ToString();
     }
 
     private void SetOwnedAmount(int newAmount)

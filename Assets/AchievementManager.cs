@@ -61,8 +61,10 @@ public partial class AchievementManager : MonoBehaviour
                 break;
             default:
                 Debug.LogWarning("Achievement not found: " + type);
-                break;
+                return;
         }
+
+        Stats.Instance.GameStats[StatType.UPGRADES_BOUGHT]++;
     }
 
     #endregion
@@ -100,49 +102,55 @@ public partial class AchievementManager : MonoBehaviour
                 case Achievement.CLICKS_1:
                     if (TimesClicked >= 1)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.CLICKS_100:
                     if (TimesClicked >= 100)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.CLICKS_500:
                     if (TimesClicked >= 500)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.CLICKS_2500:
                     if (TimesClicked >= 2500)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.CLICKS_10000:
                     if (TimesClicked >= 10000)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.BUY_HACKERS_1:
                     if (BoughtHackers >= 1)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 case Achievement.BUY_HACKERS_5:
                     if (BoughtHackers >= 5)
                     {
-                        achievement.Unlocked = true;
+                        UnlockAchievement(achievement);
                     }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
+    }
+
+    private void UnlockAchievement(AchievementInfo achievement)
+    {
+        achievement.Unlocked = true;
+        Stats.Instance.GameStats[StatType.ACHIEVEMENTS_UNLOCKED]++;
     }
 
     #endregion

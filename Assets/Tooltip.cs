@@ -1,3 +1,5 @@
+#define FORCE_SCREENRECT_TOOLTIP
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -28,12 +30,14 @@ public class Tooltip : MonoBehaviour
 
     public void SetHolderContainer(RectTransform container)
     {
+#if !FORCE_SCREENRECT_TOOLTIP
         _holderContainer = container;
 
         if (_holderContainer != null)
         {
             _holderContainer.GetWorldCorners(_holderCorners);
         }
+#endif
     }
 
     public void SetCurrentController(GenericToolTipOpener controller)
