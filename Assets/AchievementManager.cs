@@ -109,7 +109,7 @@ public partial class AchievementManager : MonoBehaviour
         new AchievementInfo(Achievement.TWITTER_BOTS_1, 1, AchColors[AchSpriteColor.Bronze], "You're fired!", "Buy one Twitter bot", 1),
         new AchievementInfo(Achievement.TWITTER_BOTS_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Buy 10 Twitter bots", 1),
         new AchievementInfo(Achievement.TWITTER_BOTS_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Buy 50 Twitter bots", 2),
-        new AchievementInfo(Achievement.TWITTER_BOTS_100, 100, AchColors[AchSpriteColor.Blue], "If I’m going to clean house, they will come in as fresh blood", "Buy 100 Twitter bots", 4),
+        new AchievementInfo(Achievement.TWITTER_BOTS_100, 100, AchColors[AchSpriteColor.Blue], "If I'm going to clean house, they will come in as fresh blood", "Buy 100 Twitter bots", 4),
         new AchievementInfo(Achievement.TWITTER_BOTS_200, 200, AchColors[AchSpriteColor.Red], "Grab them by the p*ssy", "Buy 200 Twitter bots", 6),
 
         // Global warming
@@ -131,7 +131,7 @@ public partial class AchievementManager : MonoBehaviour
         new AchievementInfo(Achievement.FIRE_PEOPLE_10, 10, AchColors[AchSpriteColor.Silver], "Get out!", "Fire 10 people", 1),
         new AchievementInfo(Achievement.FIRE_PEOPLE_50, 50, AchColors[AchSpriteColor.Gold], "Who are these people?", "Fire 50 people", 2),
         new AchievementInfo(Achievement.FIRE_PEOPLE_100, 100, AchColors[AchSpriteColor.Blue], "I have fired many people", "Fire 100 people", 4),
-        new AchievementInfo(Achievement.FIRE_PEOPLE_200, 200, AchColors[AchSpriteColor.Red], "If I’m going to clean house, they will come in as fresh blood", "Fire 200 people", 6),
+        new AchievementInfo(Achievement.FIRE_PEOPLE_200, 200, AchColors[AchSpriteColor.Red], "Cleaning house", "Fire 200 people", 6),
 
         // Fake audience
         new AchievementInfo(Achievement.FAKE_AUDIENCE_1, 1, AchColors[AchSpriteColor.Bronze], "Woo!", "Use fake audience once", 1),

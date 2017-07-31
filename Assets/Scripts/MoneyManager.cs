@@ -58,7 +58,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
-        AddMoney(1000);
+        //AddMoney(1000);
     }
 
     public void AddIncomeMultiplier(IIncomeMultiplier multiplier)
