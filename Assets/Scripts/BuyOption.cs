@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BuyOption : MonoBehaviour
 {
-    private BuyOptionData _optionData;
+    public BuyOptionData OptionData { get; private set; }
     private bool _optionUnlocked;
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _costText;
@@ -18,17 +18,17 @@ public class BuyOption : MonoBehaviour
 
     private BuyAmountModifier _buyAmountModifier;
     private MoneyManager _moneyManager;
-    private int _ownedAmount = 0;
+    public int OwnedAmount { get; private set; }
     private long _currentCost = 0;
 
     private float _lastMoneyEarnedTime = 0;
 
     public void Initialize(BuyOptionData data)
     {
-        _optionData = data;
-        SetTitle(_optionData.Name);
-        SetCost(_optionData.StartingCost);
-        SetIcon(_optionData.Icon);
+        OptionData = data;
+        SetTitle(OptionData.Name);
+        SetCost(OptionData.StartingCost);
+        SetIcon(OptionData.Icon);
 
         _buyAmountModifier = BuyAmountModifier.Instance;
         _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmount);
@@ -56,9 +56,9 @@ public class BuyOption : MonoBehaviour
 
     private void Update_HandleEarnings()
     {
-        if (Time.timeSinceLevelLoad > _lastMoneyEarnedTime + _optionData.TickTimeInSeconds)
+        if (Time.timeSinceLevelLoad > _lastMoneyEarnedTime + OptionData.TickTimeInSeconds)
         {
-            long moneyToEarn = _optionData.GetEarningsAtLevel(_ownedAmount);
+            long moneyToEarn = OptionData.GetEarningsAtLevel(OwnedAmount);
             if (moneyToEarn > 0)
             {
                 MoneyManager.Instance.AddMoney(moneyToEarn);
@@ -85,7 +85,7 @@ public class BuyOption : MonoBehaviour
 
     private bool HasEnoughMoneyToUnlock(long currentMoney)
     {
-        return currentMoney >= _optionData.AvailableAtMoney;
+        return currentMoney >= OptionData.AvailableAtMoney;
     }
 
     private void CheckIfEnoughMoneyToBuy(long currentMoney)
@@ -96,7 +96,7 @@ public class BuyOption : MonoBehaviour
 
     private long CalculateCostForAmount(int amount)
     {
-        return _optionData.GetCumulativeCostToLevel(_ownedAmount, _ownedAmount + amount);
+        return OptionData.GetCumulativeCostToLevel(OwnedAmount, OwnedAmount + amount);
     }
 
     private void SetTitle(string newTitle)
@@ -108,7 +108,7 @@ public class BuyOption : MonoBehaviour
     {
         Debug.Assert(newCost > 0);
         _currentCost = newCost;
-        _costText.text = MoneyManager.MoneyString(_currentCost);// _currentCost.ToString();
+        _costText.text = MoneyManager.MoneyString(_currentCost);
     }
 
     private void SetOwnedAmount(int newAmount)
@@ -133,13 +133,13 @@ public class BuyOption : MonoBehaviour
 
         // Increase owned amount
         int amountToBuy = _buyAmountModifier.CurrentModifier;
-        _ownedAmount = _ownedAmount + amountToBuy;
-        SetOwnedAmount(_ownedAmount);
+        OwnedAmount = OwnedAmount + amountToBuy;
+        SetOwnedAmount(OwnedAmount);
 
         // Set new cost
-        SetCost(_optionData.GetCostOfLevel(_ownedAmount));
+        SetCost(CalculateCostForAmount(OwnedAmount) * _buyAmountModifier.CurrentModifier);
 
         // Add achievement stat
-        AchievementManager.Instance.AddBuyAchievementStat(_optionData.AssociatedAchievement, amountToBuy);
+        AchievementManager.Instance.AddBuyAchievementStat(OptionData.AssociatedAchievement, amountToBuy);
     }
 }

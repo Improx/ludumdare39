@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    private static readonly List<string> _suffixes = new List<string>
+    public static readonly List<string> MoneySuffixes = new List<string>
     {
         "C",
         "KC",
@@ -41,6 +41,8 @@ public class MoneyManager : MonoBehaviour
         "YC",
         "ZC"
     };
+
+    public static readonly string CurrencyName = "Controversy";
 
     private float _totalIncomeMultiplier = 1;
 
@@ -56,7 +58,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Update()
     {
-        AddMoney(1);
+        AddMoney(1000);
     }
 
     public void AddIncomeMultiplier(IIncomeMultiplier multiplier)
@@ -97,11 +99,11 @@ public class MoneyManager : MonoBehaviour
         int mStringLength = mString.Length;
 
         int factor = (int)Mathf.Floor((mStringLength - 1) / 3) - 1;
-        if (factor < 1){ return mString + _suffixes[0]; }
 
-        float cash = newMoney / Mathf.Pow(1000, factor);
+        factor = factor < 0 ? 0 : factor;
 
-        string final = cash.ToString("F3", CultureInfo.InvariantCulture);
-        return final + _suffixes[factor];
+        return (newMoney / Mathf.Pow(1000f, factor)).ToString(
+                   "N0", CultureInfo.GetCultureInfoByIetfLanguageTag("en-US"))
+               + MoneySuffixes[factor];
     }
 }

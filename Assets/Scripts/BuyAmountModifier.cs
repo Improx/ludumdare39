@@ -20,7 +20,7 @@ public class BuyAmountModifier : MonoBehaviour
 
     public BuyAmountModifierChangedEvent OnModifierChangedEvent = new BuyAmountModifierChangedEvent();
 
-    private int _currentModifier;
+    private int _currentModifier = 1;
     public int CurrentModifier
     {
         get
@@ -33,6 +33,7 @@ public class BuyAmountModifier : MonoBehaviour
             // If new value is different, invoke "changed" event
             if (value != _currentModifier)
             {
+                print(value);
                 OnModifierChangedEvent.Invoke(value);
 
             }

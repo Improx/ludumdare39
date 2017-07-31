@@ -67,6 +67,20 @@ public class Stats : MonoBehaviour
             newText += $"{title}: {value}\n";
         }
 
+        List<string> suffixList = MoneyManager.MoneySuffixes;
+
+        // List out all suffixes
+        newText += "<align=\"center\">";
+        newText += "\nConversions:";
+        newText += $"\n1x{suffixList[0]} = 1 {MoneyManager.CurrencyName}\n";
+        for (var index = 1; index < suffixList.Count; index++)
+        {
+            string s = suffixList[index];
+
+            newText += $"1x{suffixList[index]} = 1000x{suffixList[index - 1]}\n";
+        }
+        newText += "</align>";
+
         _statsText.text = newText;
     }
 }

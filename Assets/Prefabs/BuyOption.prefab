@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114974151423386200}
   - component: {fileID: 114619618584136820}
   - component: {fileID: 114310230838562492}
+  - component: {fileID: 114079550804483990}
   m_Layer: 5
   m_Name: BuyOption
   m_TagString: Untagged
@@ -150,6 +151,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114079550804483990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119030259926048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b561d1f5546bb141914caae88504538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114108666543419460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1041,11 +1053,11 @@ RectTransform:
   m_Father: {fileID: 224209747103840000}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.55003, y: -45.199978}
-  m_SizeDelta: {x: 169.9, y: 59.6}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -5, y: 5}
+  m_SizeDelta: {x: -365.6, y: -95.4}
+  m_Pivot: {x: 1, y: 0}
 --- !u!224 &224841947806004542
 RectTransform:
   m_ObjectHideFlags: 1

@@ -9,7 +9,8 @@ public class GenericBuyOptionData
     public BuyAchievementType AssociatedAchievement;
     public long StartingCost = 100;
     public long AvailableAtMoney = 0;
-    public float CostMultiplierPerLevel = 1;
+    [Range(0, 1)]
+    public float RateOfCostIncreasePerLevel = 1;
     public float EarningPerLevel = 10;
     public float TickTimeInSeconds = 1;
 
@@ -26,5 +27,10 @@ public class GenericBuyOptionData
     public long GetEarningsAtLevel(int level)
     {
         return (long)(level * EarningPerLevel);
+    }
+
+    public long GetEarningsAtLevelPerSecond(int level)
+    {
+        return (long)(GetEarningsAtLevel(level) / TickTimeInSeconds);
     }
 }
