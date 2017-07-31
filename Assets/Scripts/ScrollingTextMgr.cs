@@ -19,7 +19,7 @@ public class ScrollingTextMgr : MonoBehaviour
         RectTransform cloneRectTransform =
         m_cloneTextObj.GetComponent<RectTransform>();
         cloneRectTransform.SetParent(m_textRectTransform);
-        cloneRectTransform.anchorMin = new Vector2(1, 0.5f);
+        cloneRectTransform.anchorMin = new Vector2(3.034f, 0.5f);
         cloneRectTransform.localScale = new Vector3(1, 1, 1);
 
     }
@@ -56,12 +56,12 @@ public class ScrollingTextMgr : MonoBehaviour
                 width = TextMeshProComponent.preferredWidth;
                 m_cloneTextObj.text = TextMeshProComponent.text;
             }
-            m_cloneTextObj.rectTransform.position = new Vector3(m_cloneTextObj.rectTransform.position.x, -4.205f,
+            m_cloneTextObj.rectTransform.position = new Vector3(m_cloneTextObj.rectTransform.position.x, 35.3f,
                 m_cloneTextObj.rectTransform.position.z);
-            if (m_cloneTextObj.rectTransform.position.x <= -15) scrollPosition = -m_cloneTextObj.rectTransform.position.x;
+           // if (m_cloneTextObj.rectTransform.position.x <= -5) scrollPosition = -m_cloneTextObj.rectTransform.position.x;
 
             //Scroll the text across the screen by moving the RectTransform
-            m_textRectTransform.position = new Vector3((-scrollPosition % width), startPosition.y, startPosition.z);
+            m_textRectTransform.position = new Vector3((-scrollPosition % (width / 4)), startPosition.y, startPosition.z);
             scrollPosition += ScrollSpeed * Time.deltaTime;
             yield return null;
         }  
