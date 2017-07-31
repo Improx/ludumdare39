@@ -99,7 +99,8 @@ public class BuyOption : MonoBehaviour
 
     private long CalculateCostForAmount(int amount)
     {
-        return OptionData.GetCumulativeCostToLevel(OwnedAmount, OwnedAmount + amount);
+        long cost = OptionData.GetCumulativeCostToLevel(OwnedAmount-1, OwnedAmount + amount-1);
+        return cost;
     }
 
     private void SetTitle(string newTitle)

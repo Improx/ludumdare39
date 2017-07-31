@@ -12,30 +12,21 @@ MonoBehaviour:
   m_Name: BuyOptionsDataObject
   m_EditorClassIdentifier: 
   Options:
-  - Name: Russian hackers
+  - Name: Fire people
     Description: 
-    Icon: {fileID: 21300000, guid: 78793e7ae1b958c458759f925a958483, type: 3}
-    AssociatedAchievement: 0
-    StartingCost: 10
+    Icon: {fileID: 21300000, guid: 90cb78b782d78f8468375dbee589bfbb, type: 3}
+    AssociatedAchievement: 5
+    StartingCost: 50
     AvailableAtMoney: 0
     RateOfCostIncreasePerLevel: 1
     EarningPerLevel: 1
     TickTimeInSeconds: 1
-  - Name: Twitter bots
+  - Name: Deny global warming
     Description: 
-    Icon: {fileID: 21300000, guid: 1a414c06358a77846b703d4f39b7a587, type: 3}
-    AssociatedAchievement: 1
-    StartingCost: 1000
-    AvailableAtMoney: 200
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 3
-    TickTimeInSeconds: 1
-  - Name: Build a wall
-    Description: 
-    Icon: {fileID: 21300004, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}
-    AssociatedAchievement: 2
-    StartingCost: 10000
-    AvailableAtMoney: 300
+    Icon: {fileID: 21300000, guid: 268831866d29a1f4c92a733a07d2a890, type: 3}
+    AssociatedAchievement: 6
+    StartingCost: 200
+    AvailableAtMoney: 50
     RateOfCostIncreasePerLevel: 1
     EarningPerLevel: 10
     TickTimeInSeconds: 1
@@ -43,43 +34,25 @@ MonoBehaviour:
     Description: 
     Icon: {fileID: 21300000, guid: 936316f176acecf459db85a33dba9306, type: 3}
     AssociatedAchievement: 3
-    StartingCost: 3000
-    AvailableAtMoney: 500
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 5
-    TickTimeInSeconds: 1
-  - Name: Anti-LGBT propaganda
-    Description: 
-    Icon: {fileID: 21300000, guid: 062ca6c85d5219d4d98d7ddd606edf3f, type: 3}
-    AssociatedAchievement: 4
-    StartingCost: 10000
-    AvailableAtMoney: 1200
+    StartingCost: 1000
+    AvailableAtMoney: 300
     RateOfCostIncreasePerLevel: 1
     EarningPerLevel: 10
     TickTimeInSeconds: 1
-  - Name: Fire people
+  - Name: Twitter bots
     Description: 
-    Icon: {fileID: 21300000, guid: 90cb78b782d78f8468375dbee589bfbb, type: 3}
-    AssociatedAchievement: 5
-    StartingCost: 10000
-    AvailableAtMoney: 1800
+    Icon: {fileID: 21300000, guid: 1a414c06358a77846b703d4f39b7a587, type: 3}
+    AssociatedAchievement: 1
+    StartingCost: 25000
+    AvailableAtMoney: 900
     RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
-    TickTimeInSeconds: 1
-  - Name: Deny global warming
-    Description: 
-    Icon: {fileID: 21300000, guid: 268831866d29a1f4c92a733a07d2a890, type: 3}
-    AssociatedAchievement: 6
-    StartingCost: 10000
-    AvailableAtMoney: 3000
-    RateOfCostIncreasePerLevel: 1
-    EarningPerLevel: 10
+    EarningPerLevel: 3
     TickTimeInSeconds: 1
   - Name: Help rich friends
     Description: 
     Icon: {fileID: 21300000, guid: 0e7c7077ed478704aac3062b81eeb48c, type: 3}
     AssociatedAchievement: 7
-    StartingCost: 10000
+    StartingCost: 10000000
     AvailableAtMoney: 4000
     RateOfCostIncreasePerLevel: 1
     EarningPerLevel: 10
@@ -88,8 +61,35 @@ MonoBehaviour:
     Description: 
     Icon: {fileID: 21300000, guid: 1753da22100bb9d48b1abee61ce4ee6d, type: 3}
     AssociatedAchievement: 8
-    StartingCost: 10000
+    StartingCost: 10000000
     AvailableAtMoney: 7500
     RateOfCostIncreasePerLevel: 1
     EarningPerLevel: 5000
+    TickTimeInSeconds: 1
+  - Name: Build a wall
+    Description: 
+    Icon: {fileID: 21300000, guid: 039f4065c93648c41a6755981278feac, type: 3}
+    AssociatedAchievement: 2
+    StartingCost: 10000000
+    AvailableAtMoney: 300
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 10
+    TickTimeInSeconds: 1
+  - Name: Russian hackers
+    Description: 
+    Icon: {fileID: 21300000, guid: 78793e7ae1b958c458759f925a958483, type: 3}
+    AssociatedAchievement: 0
+    StartingCost: 10000000
+    AvailableAtMoney: 10000
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 1
+    TickTimeInSeconds: 1
+  - Name: Anti-LGBT propaganda
+    Description: 
+    Icon: {fileID: 21300000, guid: 062ca6c85d5219d4d98d7ddd606edf3f, type: 3}
+    AssociatedAchievement: 4
+    StartingCost: 10000000
+    AvailableAtMoney: 1200
+    RateOfCostIncreasePerLevel: 1
+    EarningPerLevel: 10
     TickTimeInSeconds: 1

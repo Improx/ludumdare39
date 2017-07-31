@@ -5,4 +5,14 @@ using System.Collections.Generic;
 public class BuyOptionsCreator : ScriptableObject
 {
     public List<BuyOptionData> Options;
+
+    private void OnValidate()
+    {
+        Options.Sort(
+            (x, y) =>
+            {
+                var i = x.StartingCost < y.StartingCost ? -1 : 1;
+                return i;
+            });
+    }
 }
