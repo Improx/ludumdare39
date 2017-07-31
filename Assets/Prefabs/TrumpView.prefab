@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4615034441074678}
   - component: {fileID: 212924307684625162}
   - component: {fileID: 95146428249613714}
+  - component: {fileID: 114353461149901244}
   m_Layer: 0
   m_Name: trump
   m_TagString: Untagged
@@ -135,6 +136,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4146064947811856}
+  - component: {fileID: 114673728783786654}
   m_Layer: 0
   m_Name: TrumpView
   m_TagString: Untagged
@@ -149,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716705997473576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8880005, y: 0.018005371, z: 0}
+  m_LocalPosition: {x: 0, y: 2.37, z: 0}
   m_LocalScale: {x: 10.003937, y: 10.003937, z: 2.0007873}
   m_Children: []
   m_Father: {fileID: 4146064947811856}
@@ -162,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931086746032356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.87, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4086906460028210}
@@ -229,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142153566897958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97, y: -0.85, z: 0}
+  m_LocalPosition: {x: 0, y: -0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4531311364930796}
@@ -295,6 +297,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114353461149901244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168779042869056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd154a29a3af4a14e8284dd8543fcc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114673728783786654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931086746032356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c03a3275c712c45a044685b2fd848c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRect: {fileID: 0}
 --- !u!114 &114690859956217908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,7 +372,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212327958149544388
 SpriteRenderer:
@@ -473,7 +498,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212808313371225462
 SpriteRenderer:
@@ -549,8 +574,8 @@ SpriteRenderer:
   m_SortingLayerID: -1768203993
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b34cfb313b1b77c4290260b26a475890, type: 3}
-  m_Color: {r: 0.63235295, g: 0.14413926, b: 0.14413926, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 600e75ba8c8e4ff4ead396c9f6126a65, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
