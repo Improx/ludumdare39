@@ -1239,11 +1239,11 @@ MonoBehaviour:
   m_Content: {fileID: 224545197667517714}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 25
   m_Viewport: {fileID: 224628678756871202}
   m_HorizontalScrollbar: {fileID: 114437597128146532}
   m_VerticalScrollbar: {fileID: 114744499979490150}
@@ -2232,7 +2232,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224549692118023946}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114171208511553836}
   m_HandleRect: {fileID: 224430967281165136}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2353,6 +2353,15 @@ MonoBehaviour:
   _achievementSquareParent: {fileID: 224545197667517714}
   TimesClicked: 0
   BoughtHackers: 0
+  DeniedGlobalWarming: 0
+  PussyGrabbers: 0
+  PeopleFired: 0
+  TwitterBots: 0
+  AntiLgbt: 0
+  FakeAudience: 0
+  RichFriends: 0
+  Soldiers: 0
+  WallBricks: 0
 --- !u!114 &114460476657261256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2503,8 +2512,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114354021209349208}
   m_HandleRect: {fileID: 224997416563647236}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2995,7 +3004,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224358698563706290}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3831,7 +3840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.945, y: 1}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.000044584274, y: 0.000029660761}
   m_SizeDelta: {x: -0.4000244, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224077870093180382
@@ -4292,7 +4301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000011444092, y: 0.000028624328}
+  m_AnchoredPosition: {x: -0.000011734664, y: 0.000035331283}
   m_SizeDelta: {x: -433, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224549692118023946
