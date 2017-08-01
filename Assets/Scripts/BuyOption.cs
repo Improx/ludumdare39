@@ -27,13 +27,13 @@ public class BuyOption : MonoBehaviour
     public void Initialize(BuyOptionData data)
     {
         OptionData = data;
-        SetTitle(OptionData.Name);
-        SetCost(OptionData.StartingCost);
+        SetTitleText(OptionData.Name);
+        SetCostText(OptionData.StartingCost);
         SetIcon(OptionData.Icon);
 
         _buyAmountModifier = BuyAmountModifier.Instance;
-        _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmount);
-        _buyAmountModifier.OnModifierChangedEvent.AddListener(amount => SetCost(CalculateCostForAmount(amount)));
+        _buyAmountModifier.OnModifierChangedEvent.AddListener(SetBuyAmountText);
+        _buyAmountModifier.OnModifierChangedEvent.AddListener(amount => SetCostText(CalculateCostForAmount(amount)));
 
         _moneyManager = MoneyManager.Instance;
         _moneyManager.OnMoneyChangedEvent.AddListener(CheckIfEnoughMoneyToUnlock);
@@ -101,19 +101,20 @@ public class BuyOption : MonoBehaviour
         return cost;
     }
 
-    private void SetTitle(string newTitle)
+    private void SetTitleText(string newTitle)
     {
         _titleText.text = newTitle;
     }
 
-    private void SetCost(long newCost)
+    private void SetCostText(long newCost)
     {
         Debug.Assert(newCost > 0);
-        _currentCost = newCost;
+        // Keep cost from overflowing
+        _currentCost = newCost > 0 ? newCost : long.MaxValue;
         _costText.text = MoneyManager.MoneyString(_currentCost);
     }
 
-    private void SetOwnedAmount(int newAmount)
+    private void SetOwnedAmountText(int newAmount)
     {
         _ownedAmountText.text = newAmount.ToString();
     }
@@ -123,7 +124,7 @@ public class BuyOption : MonoBehaviour
         _iconImage.sprite = newIcon;
     }
 
-    private void SetBuyAmount(int newAmount)
+    private void SetBuyAmountText(int newAmount)
     {
         _buyAmountText.text = newAmount + "x";
     }
@@ -136,14 +137,15 @@ public class BuyOption : MonoBehaviour
         // Increase owned amount
         int amountToBuy = _buyAmountModifier.CurrentModifier;
         OwnedAmount = OwnedAmount + amountToBuy;
-        SetOwnedAmount(OwnedAmount);
+        SetOwnedAmountText(OwnedAmount);
 
         // Set new cost
-        SetCost(CalculateCostForAmount(OwnedAmount) * _buyAmountModifier.CurrentModifier);
+        SetCostText(CalculateCostForAmount(_buyAmountModifier.CurrentModifier));
 
         // Add achievement stat
         AchievementManager.Instance.AddBuyAchievementStat(OptionData.AssociatedAchievement, amountToBuy);
 
+        // Tooltip
         OnBoughtEvent.Invoke();
     }
 }
